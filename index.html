@@ -5,51 +5,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FitfuelKitchen - Makanan Sehat untuk Gym</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="beranda">
     <header>
-        <div class="logo">
-            <h1>Fit Kitchen</h1>
-            <svg width="50" height="50" viewBox="0 0 50 50">
-                <circle cx="25" cy="25" r="20" fill="#4CAF50"/>
-                <path d="M15 25 L35 25 M25 15 L25 35" stroke="white" stroke-width="4"/>
-            </svg>
+        <div class="container-header">
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 50 50">
+                    <circle cx="25" cy="25" r="20" fill="#4CAF50"/>
+                    <path d="M15 25 L35 25 M25 15 L25 35" stroke="white" stroke-width="4"/>
+                </svg>
+                <h1>Fit Kitchen</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Beranda</a></li>
+                    <li><a href="profil.html">Profil</a></li>
+                    <li><a href="produk.html">Produk</a></li>
+                    <li><a href="saran.html">Saran</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html" class="active">Beranda</a></li>
-                <li><a href="profil.html">Profil</a></li>
-                <li><a href="produk.html">Produk</a></li>
-                <li><a href="saran.html">Saran</a></li>
-            </ul>
-        </nav>
     </header>
 
     <main>
         <section class="hero">
-            <h2>Fuel Your Fitness Journey</h2>
-            <p>Makanan sehat dan bernutrisi untuk mendukung goals gym Anda</p>
+            <div class="hero-content">
+                <h2>Fuel Your <br><span>Fitness Journey</span></h2>
+                <p>Makanan sehat, makro terukur, dan bernutrisi untuk mendukung target gym Anda secara maksimal.</p>
+                <a href="produk.html" class="btn-cta">Lihat Menu Sekarang</a>
+            </div>
         </section>
 
         <section class="features">
             <div class="feature-card">
+                <div class="icon">🌿</div>
                 <h3>100% Natural</h3>
-                <p>Bahan-bahan alami tanpa pengawet</p>
+                <p>Bahan-bahan alami segar tanpa pengawet buatan.</p>
             </div>
             <div class="feature-card">
+                <div class="icon">💪</div>
                 <h3>High Protein</h3>
-                <p>Tinggi protein untuk pembentukan otot</p>
+                <p>Tinggi protein untuk memaksimalkan pembentukan otot.</p>
             </div>
             <div class="feature-card">
+                <div class="icon">⚖️</div>
                 <h3>Macro Friendly</h3>
-                <p>Sesuai dengan kebutuhan makronutrien Anda</p>
+                <p>Kalori dan nutrisi yang pas sesuai kebutuhan diet.</p>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Fitfuelitchen. Hak Cipta Dilindungi.</p>
+        <p>&copy; 2024 FitfuelKitchen. Hak Cipta Dilindungi.</p>
     </footer>
 </body>
+
+</html>
