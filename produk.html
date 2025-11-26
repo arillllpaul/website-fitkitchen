@@ -5,54 +5,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produk - FitFuel Kitchen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <header>
-        <div class="logo">
-            <h1>FitKitchen</h1>
-            <svg width="50" height="50" viewBox="0 0 50 50">
-                <circle cx="25" cy="25" r="20" fill="#4CAF50"/>
-                <path d="M15 25 L35 25 M25 15 L25 35" stroke="white" stroke-width="4"/>
-            </svg>
+        <div class="container-header">
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 50 50">
+                    <circle cx="25" cy="25" r="20" fill="#4CAF50"/>
+                    <path d="M15 25 L35 25 M25 15 L25 35" stroke="white" stroke-width="4"/>
+                </svg>
+                <h1>Fit Kitchen</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="profil.html">Profil</a></li>
+                    <li><a href="produk.html" class="active">Produk</a></li>
+                    <li><a href="saran.html">Saran</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Beranda</a></li>
-                <li><a href="profil.html">Profil</a></li>
-                <li><a href="produk.html" class="active">Produk</a></li>
-                <li><a href="saran.html">Saran</a></li>
-            </ul>
-        </nav>
     </header>
 
     <main>
         <section class="products">
-            <h2>Produk Kami</h2>
+            <h2 style="text-align: center; margin-bottom: 2rem;">Menu Sehat Kami</h2>
 
             <div class="product-grid">
                 <div class="product-card">
                     <img src="proteinbowl.jpeg" alt="Protein Bowl">
                     <h3>Protein Bowl</h3>
-                    <p>Bowl sehat dengan protein tinggi</p>
-                    <p>kalori : 450kkal</p>
-                    <p>protein : 35g</p>
-                    <p>natrium : 250mg</p>
+                    <p>Bowl sehat dengan dada ayam panggang, quinoa, dan sayuran segar.</p>
+                    <div style="padding: 0 1.5rem 1.5rem; color: #4CAF50; font-size: 0.9rem;">
+                        <strong>450 kkal | 35g Protein</strong>
+                    </div>
                 </div>
                 <div class="product-card">
                     <img src="smoothie.jpeg" alt="Fitness Smoothie">
                     <h3>Fitness Smoothie</h3>
-                    <p>Smoothie kaya protein dan nutrisi </p>
+                    <p>Campuran whey protein, pisang, dan berries untuk energi instan.</p>
+                    <div style="padding: 0 1.5rem 1.5rem; color: #4CAF50; font-size: 0.9rem;">
+                        <strong>250 kkal | 25g Protein</strong>
+                    </div>
                 </div>
                 <div class="product-card">
-                    <img src="salad.jpeg" alt="salad protein">
-                    <h3>Salad protein</h3>
-                    <p>salad dengan protein tinggi </p>
+                    <img src="salad.jpeg" alt="Salad Protein">
+                    <h3>Salad Protein</h3>
+                    <p>Sayuran organik dengan topping telur rebus dan dressing rendah lemak.</p>
+                    <div style="padding: 0 1.5rem 1.5rem; color: #4CAF50; font-size: 0.9rem;">
+                        <strong>300 kkal | 35g Protein</strong>
+                    </div>
                 </div>
             </div>
 
-            <h3>Daftar Harga</h3>
+            <h3 style="margin-top: 3rem;">Daftar Harga</h3>
             <table class="price-table">
                 <thead>
                     <tr>
@@ -76,7 +85,7 @@
                         <td>Rp35.000</td>
                     </tr>
                     <tr>
-                        <td>Salad protein</td>
+                        <td>Salad Protein</td>
                         <td>400g</td>
                         <td>35g</td>
                         <td>Rp30.000</td>
@@ -84,13 +93,15 @@
                 </tbody>
             </table>
 
-            <h3>Keunggulan Produk:</h3>
-            <ul>
-                <li>100% Bahan Alami</li>
-                <li>Tinggi Protein</li>
-                <li>Bebas Pengawet</li>
-                <li>Kalori Terkontrol</li>
-            </ul>
+            <div style="background: #fff; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-top: 2rem;">
+                <h3>Keunggulan Produk:</h3>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li>✅ 100% Bahan Alami</li>
+                    <li>✅ Tinggi Protein untuk pembentukan otot</li>
+                    <li>✅ Bebas Pengawet dan Pemanis Buatan</li>
+                    <li>✅ Kalori Terkontrol sesuai label</li>
+                </ul>
+            </div>
         </section>
     </main>
 
