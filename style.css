@@ -1,4 +1,4 @@
-/* Reset CSS */
+/* --- RESET & VARIABLES --- */
 
 * {
     margin: 0;
@@ -6,24 +6,34 @@
     box-sizing: border-box;
 }
 
-
-/* Base Styles */
+:root {
+    --primary-color: #4CAF50;
+    --primary-dark: #388E3C;
+    --text-dark: #2d2d2d;
+    --text-light: #666;
+    --bg-light: #f9f9f9;
+    --white: #ffffff;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    /* Font lebih modern */
     line-height: 1.6;
-    background-repeat: no-repeat;
-    background-color: #ffffff;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
 }
 
 
-/* Gaya background hanya untuk halaman Beranda */
+/* --- GAYA KHUSUS HALAMAN BERANDA --- */
 
 body.beranda {
-    background-image: url('1beranda.webp');
-    /* Ganti 'your-image.jpg' dengan path gambar Anda */
+    /* Pastikan file gambar 1beranda.webp ada di folder yang sama */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('1beranda.webp');
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
+    /* Efek Parallax */
     background-repeat: no-repeat;
 }
 
@@ -31,7 +41,7 @@ h1,
 h2,
 h3 {
     margin-bottom: 1rem;
-    color: #2d2d2d;
+    font-weight: 700;
 }
 
 img {
@@ -41,52 +51,86 @@ img {
 }
 
 
-/* Header & Navigation */
+/* --- HEADER & NAVIGATION --- */
 
 header {
-    background-color: rgba(7, 177, 24, 0.8);
-    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    /* Header putih bersih */
+    padding: 1rem 0;
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container-header {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    /* Logo kiri, Nav kanan */
+    align-items: center;
 }
 
 .logo {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.8rem;
 }
 
 .logo h1 {
-    color: #ffffff;
-    font-size: 1.8rem;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 nav ul {
     list-style: none;
     display: flex;
     gap: 2rem;
-    margin-top: 1rem;
-    justify-content: center;
 }
 
 nav a {
     text-decoration: none;
-    color: #333;
-    font-weight: 500;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: all 0.3s ease;
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+
+/* Efek garis bawah saat hover di menu */
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s;
+}
+
+nav a:hover::after,
+nav a.active::after {
+    width: 100%;
 }
 
 nav a:hover,
 nav a.active {
-    background-color: #026c05;
-    color: white;
+    color: var(--primary-color);
+    background-color: transparent;
+    /* Menghapus background hijau kotak lama */
 }
 
 
-/* Main Content */
+/* --- MAIN CONTENT --- */
 
 main {
     max-width: 1200px;
@@ -95,50 +139,112 @@ main {
 }
 
 
-/* Hero Section */
+/* --- HERO SECTION --- */
 
 .hero {
     text-align: center;
-    padding: 4rem 2rem;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 8px;
-    margin-bottom: 2rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 5rem 1rem;
+    /* Glassmorphism Effect */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    margin-bottom: 3rem;
+    color: white;
+    /* Teks jadi putih agar kontras dengan background gelap */
 }
 
 .hero h2 {
-    font-size: 2.5rem;
-    color: #419644;
+    font-size: 3rem;
+    color: #fff;
     margin-bottom: 1rem;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero h2 span {
+    color: var(--primary-color);
 }
 
 .hero p {
     font-size: 1.2rem;
-    color: #666;
+    color: #f0f0f0;
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
-/* Features */
+/* Tombol CTA Baru */
+
+.btn-cta {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.3s, background 0.3s;
+    box-shadow: 0 4px 10px rgba(76, 175, 80, 0.4);
+}
+
+.btn-cta:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-3px);
+}
+
+
+/* --- FEATURES --- */
 
 .features {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
-    margin: 2rem 0;
+    margin: 4rem 0;
 }
 
 .feature-card {
-    padding: 2rem;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 2.5rem;
+    background-color: var(--white);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
     text-align: center;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, border-bottom 0.3s ease;
+    border-bottom: 4px solid transparent;
 }
 
 .feature-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    border-bottom: 4px solid var(--primary-color);
 }
+
+.feature-card .icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    color: var(--primary-dark);
+}
+
+
+/* --- FOOTER --- */
+
+footer {
+    background-color: var(--white);
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+    border-top: 1px solid #eee;
+}
+
+
+/* --- HALAMAN LAIN (PROFIL, PRODUK, SARAN) --- */
+
+
+/* Kode di bawah ini dipertahankan agar halaman lain tidak rusak */
 
 
 /* Profile Page */
@@ -146,8 +252,8 @@ main {
 .profile {
     background-color: #fff;
     padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
 }
 
 .video-container {
@@ -155,7 +261,8 @@ main {
     padding-bottom: 56.25%;
     margin: 2rem 0;
     overflow: hidden;
-    border-radius: 8px;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
 }
 
 .video-container iframe {
@@ -172,33 +279,38 @@ main {
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     margin: 2rem 0;
 }
 
 .product-card {
     background-color: #fff;
-    border-radius: 8px;
+    border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
 }
 
 .product-card img {
-    width: 80%;
-    height: 400px;
+    width: 100%;
+    height: 250px;
+    /* Tinggi gambar diseragamkan agar rapi */
     object-fit: cover;
 }
 
 .product-card h3 {
-    padding: 1rem;
-    margin: 0;
-    color: #4CAF50;
+    padding: 1.5rem 1.5rem 0.5rem;
+    color: var(--text-dark);
 }
 
 .product-card p {
-    padding: 0 1rem 0rem;
-    color: #666;
+    padding: 0 1.5rem 1.5rem;
+    color: var(--text-light);
 }
 
 
@@ -209,21 +321,24 @@ main {
     border-collapse: collapse;
     margin: 2rem 0;
     background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    box-shadow: var(--shadow);
+    border-radius: 16px;
     overflow: hidden;
 }
 
 .price-table th,
 .price-table td {
-    padding: 1rem;
+    padding: 1.2rem;
     text-align: left;
     border-bottom: 1px solid #eee;
 }
 
 .price-table th {
-    background-color: #4CAF50;
+    background-color: var(--primary-color);
     color: #fff;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
 }
 
 
@@ -231,9 +346,11 @@ main {
 
 .feedback {
     background-color: #fff;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .form-group {
@@ -243,7 +360,8 @@ main {
 label {
     display: block;
     margin-bottom: 0.5rem;
-    font-weight: 500;
+    font-weight: 600;
+    color: var(--text-dark);
 }
 
 input[type="text"],
@@ -252,63 +370,63 @@ input[type="tel"],
 select,
 textarea {
     width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    padding: 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
     font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: border 0.3s;
+    background-color: #fcfcfc;
 }
 
 input:focus,
 select:focus,
 textarea:focus {
-    border-color: #4CAF50;
+    border-color: var(--primary-color);
     outline: none;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
 }
 
 textarea {
     resize: vertical;
-    min-height: 120px;
+    min-height: 150px;
 }
 
 button[type="submit"] {
-    background-color: #4CAF50;
+    background-color: var(--primary-color);
     color: #fff;
-    padding: 1rem 2rem;
+    padding: 1rem 3rem;
     border: none;
-    border-radius: 4px;
+    border-radius: 50px;
     cursor: pointer;
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 600;
+    transition: background 0.3s;
+    width: 100%;
 }
 
 button[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: var(--primary-dark);
 }
 
 
-/* Footer */
-
-footer {
-    background-color: #fff;
-    text-align: center;
-    padding: 1.5rem;
-    margin-top: 3rem;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-}
-
-
-/* Responsive Design */
+/* --- RESPONSIVE DESIGN --- */
 
 @media (max-width: 768px) {
-    nav ul {
+    .container-header {
         flex-direction: column;
-        text-align: center;
         gap: 1rem;
     }
-    .hero {
-        padding: 2rem 1rem;
+    nav ul {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     .hero h2 {
-        font-size: 2rem;
+        font-size: 2.2rem;
+    }
+    .hero {
+        padding: 3rem 1rem;
     }
 }
