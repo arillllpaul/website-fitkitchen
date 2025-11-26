@@ -5,67 +5,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saran - FitFuel Kitchen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <header>
-        <div class="logo">
-            <h1>Fit Kitchen</h1>
-            <svg width="50" height="50" viewBox="0 0 50 50">
-                <circle cx="25" cy="25" r="20" fill="#4CAF50"/>
-                <path d="M15 25 L35 25 M25 15 L25 35" stroke="white" stroke-width="4"/>
-            </svg>
+        <div class="container-header">
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 50 50">
+                    <circle cx="25" cy="25" r="20" fill="#4CAF50"/>
+                    <path d="M15 25 L35 25 M25 15 L25 35" stroke="white" stroke-width="4"/>
+                </svg>
+                <h1>Fit Kitchen</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="profil.html">Profil</a></li>
+                    <li><a href="produk.html">Produk</a></li>
+                    <li><a href="saran.html" class="active">Saran</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Beranda</a></li>
-                <li><a href="profil.html">Profil</a></li>
-                <li><a href="produk.html">Produk</a></li>
-                <li><a href="saran.html" class="active">Saran</a></li>
-            </ul>
-        </nav>
     </header>
 
     <main>
         <section class="feedback">
-            <h2>Formulir Saran</h2>
+            <h2 style="text-align: center; margin-bottom: 2rem;">Formulir Saran</h2>
+            <p style="text-align: center; margin-bottom: 2rem; color: #666;">Masukan Anda sangat berharga untuk kemajuan kami.</p>
+
             <form action="#" method="POST">
                 <div class="form-group">
-                    <label for="nama">Nama:</label>
-                    <input type="text" id="nama" name="nama" required>
+                    <label for="nama">Nama Lengkap:</label>
+                    <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
+                    <label for="email">Alamat Email:</label>
+                    <input type="email" id="email" name="email" placeholder="contoh@email.com" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="telepon">Nomor Telepon:</label>
-                    <input type="tel" id="telepon" name="telepon">
+                    <label for="telepon">Nomor Telepon (Opsional):</label>
+                    <input type="tel" id="telepon" name="telepon" placeholder="0812...">
                 </div>
 
                 <div class="form-group">
                     <label for="kategori">Kategori Saran:</label>
                     <select id="kategori" name="kategori">
-                        <option value="produk">Produk</option>
-                        <option value="layanan">Layanan</option>
-                        <option value="website">Website</option>
+                        <option value="produk">Kualitas Produk</option>
+                        <option value="layanan">Pelayanan</option>
+                        <option value="website">Tampilan Website</option>
                         <option value="lainnya">Lainnya</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label for="saran">Saran Anda:</label>
-                    <textarea id="saran" name="saran" rows="5" required></textarea>
+                    <label for="saran">Pesan / Saran:</label>
+                    <textarea id="saran" name="saran" rows="5" placeholder="Tuliskan pengalaman atau saran Anda di sini..." required></textarea>
                 </div>
 
-                <div class="form-group">
-                    <label>
-                        <input type="checkbox" name="newsletter" value="yes">
-                        Saya ingin berlangganan newsletter
-                    </label>
+                <div class="form-group" style="display: flex; align-items: center; gap: 10px;">
+                    <input type="checkbox" name="newsletter" value="yes" id="newsletter" style="width: auto; margin-bottom: 0;">
+                    <label for="newsletter" style="margin-bottom: 0; font-weight: 400;">Saya ingin berlangganan info promo & menu baru</label>
                 </div>
 
                 <button type="submit">Kirim Saran</button>
